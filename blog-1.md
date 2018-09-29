@@ -7,7 +7,7 @@
    - Created with `GDALOpenShared("file_path",GA_ReadOnly)` for shared dataset   
 
      ~~~c++
-     ```poSrcDS = (GDALDataset*)GDALOpenShared(srcPath, GA_ReadOnly);```
+     poSrcDS = (GDALDataset*)GDALOpenShared(srcPath, GA_ReadOnly);
      ~~~
 
    - `GDALClose(GDALDataset)` to destory the GDALDataset  
@@ -19,17 +19,17 @@
    - `GetRasterXSize() GetRasterYSize() GetRasterCount()`  Fetch raster width in pixels, fetch raster height  in pixels and fetch raster bands on this dataset
    - `GetRasterBand(int)` Fetch a band object `GDALRasterBand `   
 
-2.  Class `GetGDALDriverManager`  *Class for managing the registration of file format drivers*
+2. Class `GetGDALDriverManager`  *Class for managing the registration of file format drivers*
 
    - `GetDriverByName(const char *)` Fetch a driver based on the short name `GDALDriver`
 
-3.  Class `GDALDriver` *Format specific driver*
+3. Class `GDALDriver` *Format specific driver*
 
    - `Create (const char *pszName, int nXSize, int nYSize, int nBands, GDALDataType eType, char **papszOptions)` Create a new dataset with this driver
 
-     ```c++ 
-     poDstDS = GetGDALDriverManager()->GetDriverByName("GTiff")->Create(dstPath, imgXlen, imgYlen, bandNum, GDT_Byte, NULL); 
-     ```
+```c++ 
+poDstDS = GetGDALDriverManager()->GetDriverByName("GTiff")->Create(dstPath, imgXlen, imgYlen, bandNum, GDT_Byte, NULL); 
+```
 
 4. `CPLMalloc()` and `CPLFree()` 
 
@@ -38,14 +38,14 @@
    CPLFree(bufftmp);
    ```
 
-5.  Class     `GDALRasterBand`   *A single raster band (or channel)*
+5. Class     `GDALRasterBand`   *A single raster band (or channel)*
 
    - `RasterIO(GDALRWFlag *eRWFlag*,int *nXOff*,int *nYOff*,int *nXSize*,int *nYSize*,void * *pData*,int *nBufXSize*,int *nBufYSize*,GDALDataType *eBufType*,GSpacing *nPixelSpace*,GSpacing *nLineSpace*,GDALRasterIOExtraArg * *psExtraArg* )`  Read raster band data from GDALRasterBand to pData or write raster band data from pData to GDALRasterBand
 
-     ``````c++
-     poSrcDS->GetRasterBand(i + 1)->RasterIO(GF_Read, 0, 0, imgXlen, imgYlen, bufftmp, imgXlen, imgYlen, GDT_Byte, 0, 0);
-     		poDstDS->GetRasterBand(i + 1)->RasterIO(GF_Write, 0, 0, imgXlen, imgYlen, bufftmp, imgXlen, imgYlen, GDT_Byte, 0, 0);
-     ``````
+``````c++
+poSrcDS->GetRasterBand(i + 1)->RasterIO(GF_Read, 0, 0, imgXlen, imgYlen, bufftmp, imgXlen, imgYlen, GDT_Byte, 0, 0);
+poDstDS->GetRasterBand(i + 1)->RasterIO(GF_Write, 0, 0, imgXlen, imgYlen, bufftmp, imgXlen, imgYlen, GDT_Byte, 0, 0);
+``````
 
 ### 主要步骤 ###
 
