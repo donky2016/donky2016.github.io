@@ -2,9 +2,7 @@
 
 ### GDAL相关知识 ###
 
-Class    `GDALDataset`   
-
- *A set of associated raster bands, usually from one file*
+- Class    `GDALDataset` 	*A set of associated raster bands, usually from one file*
 
 
 
