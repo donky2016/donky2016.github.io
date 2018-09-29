@@ -27,9 +27,9 @@
 
    - `Create (const char *pszName, int nXSize, int nYSize, int nBands, GDALDataType eType, char **papszOptions)` Create a new dataset with this driver
 
-```c++ 
-poDstDS = GetGDALDriverManager()->GetDriverByName("GTiff")->Create(dstPath, imgXlen, imgYlen, bandNum, GDT_Byte, NULL); 
-```
+     ```c++ 
+     poDstDS = GetGDALDriverManager()->GetDriverByName("GTiff")->Create(dstPath, imgXlen, imgYlen, bandNum, GDT_Byte, NULL); 
+     ```
 
 4. `CPLMalloc()` and `CPLFree()` 
 
@@ -42,10 +42,10 @@ poDstDS = GetGDALDriverManager()->GetDriverByName("GTiff")->Create(dstPath, imgX
 
    - `RasterIO(GDALRWFlag *eRWFlag*,int *nXOff*,int *nYOff*,int *nXSize*,int *nYSize*,void * *pData*,int *nBufXSize*,int *nBufYSize*,GDALDataType *eBufType*,GSpacing *nPixelSpace*,GSpacing *nLineSpace*,GDALRasterIOExtraArg * *psExtraArg* )`  Read raster band data from GDALRasterBand to pData or write raster band data from pData to GDALRasterBand
 
-``````c++
-poSrcDS->GetRasterBand(i + 1)->RasterIO(GF_Read, 0, 0, imgXlen, imgYlen, bufftmp, imgXlen, imgYlen, GDT_Byte, 0, 0);
-poDstDS->GetRasterBand(i + 1)->RasterIO(GF_Write, 0, 0, imgXlen, imgYlen, bufftmp, imgXlen, imgYlen, GDT_Byte, 0, 0);
-``````
+     ```c++ 
+     poSrcDS->GetRasterBand(i + 1)->RasterIO(GF_Read, 0, 0, imgXlen, imgYlen, bufftmp, imgXlen, imgYlen, GDT_Byte, 0, 0);
+     poDstDS->GetRasterBand(i + 1)->RasterIO(GF_Write, 0, 0, imgXlen, imgYlen, bufftmp, imgXlen, imgYlen, GDT_Byte, 0, 0);
+     ```
 
 ### 主要步骤 ###
 
