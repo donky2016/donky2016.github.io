@@ -1,12 +1,9 @@
-<!DOCTYPE html>
-  <html>
-    <head>
+<!DOCTYPE html><html><head>
       <title>blog-1</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
-      <link rel="stylesheet" href="file:///C:\Users\donky16\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.3.5\node_modules\@shd101wyy\mume\dependencies\katex\katex.min.css">
-      
+      <link rel="stylesheet" href="file:///C:\Users\donky16\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.3.8\node_modules\@shd101wyy\mume\dependencies\katex\katex.min.css">
       
       
       
@@ -214,9 +211,9 @@ code.language-yaml {
     </head>
     <body for="html-export">
       <div class="mume markdown-preview   ">
-      <h2 class="mume-header" id="gdal-visual-studio-%E9%85%8D%E7%BD%AE">GDAL + Visual Studio 配置</h2>
+      <h2 class="mume-header" id="gdal-visual-studio-%E9%85%8D%E7%BD%AE">GDAL + Visual Studio &#x914D;&#x7F6E;</h2>
 
-<h3 class="mume-header" id="gdal%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86">GDAL相关知识</h3>
+<h3 class="mume-header" id="gdal%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86">GDAL&#x76F8;&#x5173;&#x77E5;&#x8BC6;</h3>
 
 <ol>
 <li>
@@ -249,7 +246,7 @@ code.language-yaml {
 <ul>
 <li>
 <p><code>Create (const char *pszName, int nXSize, int nYSize, int nBands, GDALDataType eType, char **papszOptions)</code> Create a new dataset with this driver</p>
-<pre data-role="codeBlock" data-info="c++" class="language-cpp">poDstDS <span class="token operator">=</span> <span class="token function">GetGDALDriverManager</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">GetDriverByName</span><span class="token punctuation">(</span><span class="token string">"GTiff"</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">Create</span><span class="token punctuation">(</span>dstPath<span class="token punctuation">,</span> imgXlen<span class="token punctuation">,</span> imgYlen<span class="token punctuation">,</span> bandNum<span class="token punctuation">,</span> GDT_Byte<span class="token punctuation">,</span> <span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<pre data-role="codeBlock" data-info="c++" class="language-cpp">poDstDS <span class="token operator">=</span> <span class="token function">GetGDALDriverManager</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">GetDriverByName</span><span class="token punctuation">(</span><span class="token string">&quot;GTiff&quot;</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">Create</span><span class="token punctuation">(</span>dstPath<span class="token punctuation">,</span> imgXlen<span class="token punctuation">,</span> imgYlen<span class="token punctuation">,</span> bandNum<span class="token punctuation">,</span> GDT_Byte<span class="token punctuation">,</span> <span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
 </pre></li>
 </ul>
 </li>
@@ -263,33 +260,33 @@ code.language-yaml {
 <ul>
 <li>
 <p><code>RasterIO(GDALRWFlag *eRWFlag*,int *nXOff*,int *nYOff*,int *nXSize*,int *nYSize*,void * *pData*,int *nBufXSize*,int *nBufYSize*,GDALDataType *eBufType*,GSpacing *nPixelSpace*,GSpacing *nLineSpace*,GDALRasterIOExtraArg * *psExtraArg* )</code>  Read raster band data from GDALRasterBand to pData or write raster band data from pData to GDALRasterBand</p>
-<pre data-role="codeBlock" data-info="c++" class="language-cpp">poSrcDS<span class="token operator">-</span><span class="token operator">></span><span class="token function">GetRasterBand</span><span class="token punctuation">(</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">RasterIO</span><span class="token punctuation">(</span>GF_Read<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> imgXlen<span class="token punctuation">,</span> imgYlen<span class="token punctuation">,</span> bufftmp<span class="token punctuation">,</span> imgXlen<span class="token punctuation">,</span> imgYlen<span class="token punctuation">,</span> GDT_Byte<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-poDstDS<span class="token operator">-</span><span class="token operator">></span><span class="token function">GetRasterBand</span><span class="token punctuation">(</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">RasterIO</span><span class="token punctuation">(</span>GF_Write<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> imgXlen<span class="token punctuation">,</span> imgYlen<span class="token punctuation">,</span> bufftmp<span class="token punctuation">,</span> imgXlen<span class="token punctuation">,</span> imgYlen<span class="token punctuation">,</span> GDT_Byte<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<pre data-role="codeBlock" data-info="c++" class="language-cpp">poSrcDS<span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">GetRasterBand</span><span class="token punctuation">(</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">RasterIO</span><span class="token punctuation">(</span>GF_Read<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> imgXlen<span class="token punctuation">,</span> imgYlen<span class="token punctuation">,</span> bufftmp<span class="token punctuation">,</span> imgXlen<span class="token punctuation">,</span> imgYlen<span class="token punctuation">,</span> GDT_Byte<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+poDstDS<span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">GetRasterBand</span><span class="token punctuation">(</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">RasterIO</span><span class="token punctuation">(</span>GF_Write<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> imgXlen<span class="token punctuation">,</span> imgYlen<span class="token punctuation">,</span> bufftmp<span class="token punctuation">,</span> imgXlen<span class="token punctuation">,</span> imgYlen<span class="token punctuation">,</span> GDT_Byte<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </pre></li>
 </ul>
 </li>
 </ol>
-<h3 class="mume-header" id="%E4%B8%BB%E8%A6%81%E6%AD%A5%E9%AA%A4">主要步骤</h3>
+<h3 class="mume-header" id="%E4%B8%BB%E8%A6%81%E6%AD%A5%E9%AA%A4">&#x4E3B;&#x8981;&#x6B65;&#x9AA4;</h3>
 
 <ol>
 <li>
-<p>使用VS2017新建Win32控制台应用程序GDALDemo</p>
+<p>&#x4F7F;&#x7528;VS2017&#x65B0;&#x5EFA;Win32&#x63A7;&#x5236;&#x53F0;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;GDALDemo</p>
 </li>
 <li>
-<p>将头文件、lib文件放在项目内，并加入预编译代码<code>#include &quot;gdal/gdal_priv.h&quot; #pragma comment(lib, &quot;gdal_i.lib&quot;)</code></p>
+<p>&#x5C06;&#x5934;&#x6587;&#x4EF6;&#x3001;lib&#x6587;&#x4EF6;&#x653E;&#x5728;&#x9879;&#x76EE;&#x5185;&#xFF0C;&#x5E76;&#x52A0;&#x5165;&#x9884;&#x7F16;&#x8BD1;&#x4EE3;&#x7801;<code>#include &quot;gdal/gdal_priv.h&quot; #pragma comment(lib, &quot;gdal_i.lib&quot;)</code></p>
 </li>
 <li>
-<p>按照文档进行代码编写，主要类和方法在基本知识已经介绍</p>
+<p>&#x6309;&#x7167;&#x6587;&#x6863;&#x8FDB;&#x884C;&#x4EE3;&#x7801;&#x7F16;&#x5199;&#xFF0C;&#x4E3B;&#x8981;&#x7C7B;&#x548C;&#x65B9;&#x6CD5;&#x5728;&#x57FA;&#x672C;&#x77E5;&#x8BC6;&#x5DF2;&#x7ECF;&#x4ECB;&#x7ECD;</p>
 <ul>
 <li>
 <p>GDALDemo.cpp</p>
-<pre data-role="codeBlock" data-info="c++" class="language-cpp"><span class="token comment">// GDALDemo.cpp : 定义控制台应用程序的入口点。</span>
+<pre data-role="codeBlock" data-info="c++" class="language-cpp"><span class="token comment">// GDALDemo.cpp : &#x5B9A;&#x4E49;&#x63A7;&#x5236;&#x53F0;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684;&#x5165;&#x53E3;&#x70B9;&#x3002;</span>
 <span class="token comment">//</span>
 
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">"stdafx.h"</span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">"gdal/gdal_priv.h"</span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
-<span class="token macro property">#<span class="token directive keyword">pragma</span> comment(lib, "gdal_i.lib")</span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&quot;stdafx.h&quot;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&quot;gdal/gdal_priv.h&quot;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;iostream&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">pragma</span> comment(lib, &quot;gdal_i.lib&quot;)</span>
 
 <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
 <span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
@@ -297,8 +294,8 @@ poDstDS<span class="token operator">-</span><span class="token operator">></span
 	GDALDataset<span class="token operator">*</span> poSrcDS<span class="token punctuation">;</span>
 	GDALDataset<span class="token operator">*</span> poDstDS<span class="token punctuation">;</span>
 	<span class="token keyword">int</span> imgXlen<span class="token punctuation">,</span> imgYlen<span class="token punctuation">;</span>
-	<span class="token keyword">char</span><span class="token operator">*</span> srcPath <span class="token operator">=</span> <span class="token string">"Taeyeon.png"</span><span class="token punctuation">;</span>
-	<span class="token keyword">char</span><span class="token operator">*</span> dstPath <span class="token operator">=</span> <span class="token string">"result.tif"</span><span class="token punctuation">;</span>
+	<span class="token keyword">char</span><span class="token operator">*</span> srcPath <span class="token operator">=</span> <span class="token string">&quot;Taeyeon.png&quot;</span><span class="token punctuation">;</span>
+	<span class="token keyword">char</span><span class="token operator">*</span> dstPath <span class="token operator">=</span> <span class="token string">&quot;result.tif&quot;</span><span class="token punctuation">;</span>
 	GByte<span class="token operator">*</span> bufftmp<span class="token punctuation">;</span>
 	<span class="token keyword">int</span> bandNum<span class="token punctuation">;</span>
 
@@ -306,55 +303,54 @@ poDstDS<span class="token operator">-</span><span class="token operator">></span
 
 	poSrcDS <span class="token operator">=</span> <span class="token punctuation">(</span>GDALDataset<span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">GDALOpenShared</span><span class="token punctuation">(</span>srcPath<span class="token punctuation">,</span> GA_ReadOnly<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-	imgXlen <span class="token operator">=</span> poSrcDS<span class="token operator">-</span><span class="token operator">></span><span class="token function">GetRasterXSize</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	imgYlen <span class="token operator">=</span> poSrcDS<span class="token operator">-</span><span class="token operator">></span><span class="token function">GetRasterYSize</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	bandNum <span class="token operator">=</span> poSrcDS<span class="token operator">-</span><span class="token operator">></span><span class="token function">GetRasterCount</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	imgXlen <span class="token operator">=</span> poSrcDS<span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">GetRasterXSize</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	imgYlen <span class="token operator">=</span> poSrcDS<span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">GetRasterYSize</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	bandNum <span class="token operator">=</span> poSrcDS<span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">GetRasterCount</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-	cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Image X Length:"</span> <span class="token operator">&lt;&lt;</span> imgXlen <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-	cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Image Y Length:"</span> <span class="token operator">&lt;&lt;</span> imgYlen <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-	cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Band Number:"</span> <span class="token operator">&lt;&lt;</span> bandNum <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+	cout <span class="token operator">&lt;&lt;</span> <span class="token string">&quot;Image X Length:&quot;</span> <span class="token operator">&lt;&lt;</span> imgXlen <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+	cout <span class="token operator">&lt;&lt;</span> <span class="token string">&quot;Image Y Length:&quot;</span> <span class="token operator">&lt;&lt;</span> imgYlen <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+	cout <span class="token operator">&lt;&lt;</span> <span class="token string">&quot;Band Number:&quot;</span> <span class="token operator">&lt;&lt;</span> bandNum <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
 
 	bufftmp <span class="token operator">=</span> <span class="token punctuation">(</span>GByte<span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">CPLMalloc</span><span class="token punctuation">(</span>imgXlen<span class="token operator">*</span>imgYlen <span class="token operator">*</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>GByte<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-	poDstDS <span class="token operator">=</span> <span class="token function">GetGDALDriverManager</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">GetDriverByName</span><span class="token punctuation">(</span><span class="token string">"GTiff"</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">Create</span><span class="token punctuation">(</span>dstPath<span class="token punctuation">,</span> imgXlen<span class="token punctuation">,</span> imgYlen<span class="token punctuation">,</span> bandNum<span class="token punctuation">,</span> GDT_Byte<span class="token punctuation">,</span> <span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	poDstDS <span class="token operator">=</span> <span class="token function">GetGDALDriverManager</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">GetDriverByName</span><span class="token punctuation">(</span><span class="token string">&quot;GTiff&quot;</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">Create</span><span class="token punctuation">(</span>dstPath<span class="token punctuation">,</span> imgXlen<span class="token punctuation">,</span> imgYlen<span class="token punctuation">,</span> bandNum<span class="token punctuation">,</span> GDT_Byte<span class="token punctuation">,</span> <span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 	<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> bandNum<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
 	<span class="token punctuation">{</span>
-		poSrcDS<span class="token operator">-</span><span class="token operator">></span><span class="token function">GetRasterBand</span><span class="token punctuation">(</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">RasterIO</span><span class="token punctuation">(</span>GF_Read<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> imgXlen<span class="token punctuation">,</span> imgYlen<span class="token punctuation">,</span> bufftmp<span class="token punctuation">,</span> imgXlen<span class="token punctuation">,</span> imgYlen<span class="token punctuation">,</span> GDT_Byte<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-		poDstDS<span class="token operator">-</span><span class="token operator">></span><span class="token function">GetRasterBand</span><span class="token punctuation">(</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">RasterIO</span><span class="token punctuation">(</span>GF_Write<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> imgXlen<span class="token punctuation">,</span> imgYlen<span class="token punctuation">,</span> bufftmp<span class="token punctuation">,</span> imgXlen<span class="token punctuation">,</span> imgYlen<span class="token punctuation">,</span> GDT_Byte<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		poSrcDS<span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">GetRasterBand</span><span class="token punctuation">(</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">RasterIO</span><span class="token punctuation">(</span>GF_Read<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> imgXlen<span class="token punctuation">,</span> imgYlen<span class="token punctuation">,</span> bufftmp<span class="token punctuation">,</span> imgXlen<span class="token punctuation">,</span> imgYlen<span class="token punctuation">,</span> GDT_Byte<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		poDstDS<span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">GetRasterBand</span><span class="token punctuation">(</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">RasterIO</span><span class="token punctuation">(</span>GF_Write<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> imgXlen<span class="token punctuation">,</span> imgYlen<span class="token punctuation">,</span> bufftmp<span class="token punctuation">,</span> imgXlen<span class="token punctuation">,</span> imgYlen<span class="token punctuation">,</span> GDT_Byte<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 	<span class="token punctuation">}</span>
 	<span class="token function">CPLFree</span><span class="token punctuation">(</span>bufftmp<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 	<span class="token function">GDALClose</span><span class="token punctuation">(</span>poSrcDS<span class="token punctuation">)</span><span class="token punctuation">;</span>
 	<span class="token function">GDALClose</span><span class="token punctuation">(</span>poDstDS<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-	<span class="token function">system</span><span class="token punctuation">(</span><span class="token string">"pause"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">system</span><span class="token punctuation">(</span><span class="token string">&quot;pause&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 	<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </pre></li>
 </ul>
 </li>
 <li>
-<p>最后直接生成Release版本</p>
+<p>&#x6700;&#x540E;&#x76F4;&#x63A5;&#x751F;&#x6210;Release&#x7248;&#x672C;</p>
 </li>
 <li>
-<p>在Release文件夹内放入dll动态链接库文件，用于运行时加载，把所需源图片也加进去</p>
+<p>&#x5728;Release&#x6587;&#x4EF6;&#x5939;&#x5185;&#x653E;&#x5165;dll&#x52A8;&#x6001;&#x94FE;&#x63A5;&#x5E93;&#x6587;&#x4EF6;&#xFF0C;&#x7528;&#x4E8E;&#x8FD0;&#x884C;&#x65F6;&#x52A0;&#x8F7D;&#xFF0C;&#x628A;&#x6240;&#x9700;&#x6E90;&#x56FE;&#x7247;&#x4E5F;&#x52A0;&#x8FDB;&#x53BB;</p>
 </li>
 <li>
-<p>运行exe，输出结果如下，并生成tif文件<img src="http://ww1.sinaimg.cn/large/006cY7n0ly1fvqy71yivpj30kc07a74e.jpg" alt=""></p>
+<p>&#x8FD0;&#x884C;exe&#xFF0C;&#x8F93;&#x51FA;&#x7ED3;&#x679C;&#x5982;&#x4E0B;&#xFF0C;&#x5E76;&#x751F;&#x6210;tif&#x6587;&#x4EF6;<img src="http://ww1.sinaimg.cn/large/006cY7n0ly1fvqy71yivpj30kc07a74e.jpg" alt=""></p>
 </li>
 </ol>
-<h3 class="mume-header" id="%E9%81%87%E5%88%B0%E9%97%AE%E9%A2%98">遇到问题</h3>
+<h3 class="mume-header" id="%E9%81%87%E5%88%B0%E9%97%AE%E9%A2%98">&#x9047;&#x5230;&#x95EE;&#x9898;</h3>
 
 <ol>
-<li>首先有实例代码，所以减轻了很大难度，但是还是有很多实例代码只是涉略一点，于是花了很多时间看了一波官方的文档</li>
-<li>在项目生成的时候，一开始选择了x64，发现编译失败，有点迷。但是换了x86就OK了，应该是lib库是32bit的。</li>
+<li>&#x9996;&#x5148;&#x6709;&#x5B9E;&#x4F8B;&#x4EE3;&#x7801;&#xFF0C;&#x6240;&#x4EE5;&#x51CF;&#x8F7B;&#x4E86;&#x5F88;&#x5927;&#x96BE;&#x5EA6;&#xFF0C;&#x4F46;&#x662F;&#x8FD8;&#x662F;&#x6709;&#x5F88;&#x591A;&#x5B9E;&#x4F8B;&#x4EE3;&#x7801;&#x53EA;&#x662F;&#x6D89;&#x7565;&#x4E00;&#x70B9;&#xFF0C;&#x4E8E;&#x662F;&#x82B1;&#x4E86;&#x5F88;&#x591A;&#x65F6;&#x95F4;&#x770B;&#x4E86;&#x4E00;&#x6CE2;&#x5B98;&#x65B9;&#x7684;&#x6587;&#x6863;</li>
+<li>&#x5728;&#x9879;&#x76EE;&#x751F;&#x6210;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4E00;&#x5F00;&#x59CB;&#x9009;&#x62E9;&#x4E86;x64&#xFF0C;&#x53D1;&#x73B0;&#x7F16;&#x8BD1;&#x5931;&#x8D25;&#xFF0C;&#x6709;&#x70B9;&#x8FF7;&#x3002;&#x4F46;&#x662F;&#x6362;&#x4E86;x86&#x5C31;OK&#x4E86;&#xFF0C;&#x5E94;&#x8BE5;&#x662F;lib&#x5E93;&#x662F;32bit&#x7684;&#x3002;</li>
 </ol>
 
       </div>
       
       
-    </body>
     
     
     
@@ -362,4 +358,6 @@ poDstDS<span class="token operator">-</span><span class="token operator">></span
     
     
     
-  </html>
+    
+  
+    </body></html>
