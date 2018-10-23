@@ -93,9 +93,8 @@
   
   ```
 
-  - 结果截图
-
-    ![](http://ww1.sinaimg.cn/large/006B2c7cly1fwhx0konruj30hs0dcjs6.jpg)
+- 结果截图
+![](http://ww1.sinaimg.cn/large/006B2c7cly1fwhx0konruj30hs0dcjs6.jpg)
 
   ### 问题和体会 ###
 
