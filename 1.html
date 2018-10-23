@@ -1,406 +1,235 @@
 <!DOCTYPE html>
-<html>
-<head>
-<title>blog-1.md</title>
-<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+  <html>
+    <head>
+      <title>blog-1</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///C:\Users\donky16\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.3.5\node_modules\@shd101wyy\mume\dependencies\katex\katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
 
-<style>
-/*---------------------------------------------------------------------------------------------
- *  Copyright (c) Microsoft Corporation. All rights reserved.
- *  Licensed under the MIT License. See License.txt in the project root for license information.
- *--------------------------------------------------------------------------------------------*/
-
-body {
-	font-family: "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback";
-	font-size: 14px;
-	padding: 0 12px;
-	line-height: 22px;
-	word-wrap: break-word;
-}
-
-#code-csp-warning {
-	position: fixed;
-	top: 0;
-	right: 0;
-	color: white;
-	margin: 16px;
-	text-align: center;
-	font-size: 12px;
-	font-family: sans-serif;
-	background-color:#444444;
-	cursor: pointer;
-	padding: 6px;
-	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
-}
-
-#code-csp-warning:hover {
-	text-decoration: none;
-	background-color:#007acc;
-	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
-}
-
-
-body.scrollBeyondLastLine {
-	margin-bottom: calc(100vh - 22px);
-}
-
-body.showEditorSelection .code-line {
-	position: relative;
-}
-
-body.showEditorSelection .code-active-line:before,
-body.showEditorSelection .code-line:hover:before {
-	content: "";
-	display: block;
-	position: absolute;
-	top: 0;
-	left: -12px;
-	height: 100%;
-}
-
-body.showEditorSelection li.code-active-line:before,
-body.showEditorSelection li.code-line:hover:before {
-	left: -30px;
-}
-
-.vscode-light.showEditorSelection .code-active-line:before {
-	border-left: 3px solid rgba(0, 0, 0, 0.15);
-}
-
-.vscode-light.showEditorSelection .code-line:hover:before {
-	border-left: 3px solid rgba(0, 0, 0, 0.40);
-}
-
-.vscode-dark.showEditorSelection .code-active-line:before {
-	border-left: 3px solid rgba(255, 255, 255, 0.4);
-}
-
-.vscode-dark.showEditorSelection .code-line:hover:before {
-	border-left: 3px solid rgba(255, 255, 255, 0.60);
-}
-
-.vscode-high-contrast.showEditorSelection .code-active-line:before {
-	border-left: 3px solid rgba(255, 160, 0, 0.7);
-}
-
-.vscode-high-contrast.showEditorSelection .code-line:hover:before {
-	border-left: 3px solid rgba(255, 160, 0, 1);
-}
-
-img {
-	max-width: 100%;
-	max-height: 100%;
-}
-
-a {
-	color: #4080D0;
-	text-decoration: none;
-}
-
-a:focus,
-input:focus,
-select:focus,
-textarea:focus {
-	outline: 1px solid -webkit-focus-ring-color;
-	outline-offset: -1px;
-}
-
-hr {
-	border: 0;
-	height: 2px;
-	border-bottom: 2px solid;
-}
-
-h1 {
-	padding-bottom: 0.3em;
-	line-height: 1.2;
-	border-bottom-width: 1px;
-	border-bottom-style: solid;
-}
-
-h1, h2, h3 {
-	font-weight: normal;
-}
-
-h1 code,
-h2 code,
-h3 code,
-h4 code,
-h5 code,
-h6 code {
-	font-size: inherit;
-	line-height: auto;
-}
-
-a:hover {
-	color: #4080D0;
-	text-decoration: underline;
-}
-
-table {
-	border-collapse: collapse;
-}
-
-table > thead > tr > th {
-	text-align: left;
-	border-bottom: 1px solid;
-}
-
-table > thead > tr > th,
-table > thead > tr > td,
-table > tbody > tr > th,
-table > tbody > tr > td {
-	padding: 5px 10px;
-}
-
-table > tbody > tr + tr > td {
-	border-top: 1px solid;
-}
-
-blockquote {
-	margin: 0 7px 0 5px;
-	padding: 0 16px 0 10px;
-	border-left: 5px solid;
-}
-
-code {
-	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
-	font-size: 14px;
-	line-height: 19px;
-}
-
-body.wordWrap pre {
-	white-space: pre-wrap;
-}
-
-.mac code {
-	font-size: 12px;
-	line-height: 18px;
-}
-
-pre:not(.hljs),
-pre.hljs code > div {
-	padding: 16px;
-	border-radius: 3px;
-	overflow: auto;
-}
-
-/** Theming */
-
-.vscode-light,
-.vscode-light pre code {
-	color: rgb(30, 30, 30);
-}
-
-.vscode-dark,
-.vscode-dark pre code {
-	color: #DDD;
-}
-
-.vscode-high-contrast,
-.vscode-high-contrast pre code {
-	color: white;
-}
-
-.vscode-light code {
-	color: #A31515;
-}
-
-.vscode-dark code {
-	color: #D7BA7D;
-}
-
-.vscode-light pre:not(.hljs),
-.vscode-light code > div {
-	background-color: rgba(220, 220, 220, 0.4);
-}
-
-.vscode-dark pre:not(.hljs),
-.vscode-dark code > div {
-	background-color: rgba(10, 10, 10, 0.4);
-}
-
-.vscode-high-contrast pre:not(.hljs),
-.vscode-high-contrast code > div {
-	background-color: rgb(0, 0, 0);
-}
-
-.vscode-high-contrast h1 {
-	border-color: rgb(0, 0, 0);
-}
-
-.vscode-light table > thead > tr > th {
-	border-color: rgba(0, 0, 0, 0.69);
-}
-
-.vscode-dark table > thead > tr > th {
-	border-color: rgba(255, 255, 255, 0.69);
-}
-
-.vscode-light h1,
-.vscode-light hr,
-.vscode-light table > tbody > tr + tr > td {
-	border-color: rgba(0, 0, 0, 0.18);
-}
-
-.vscode-dark h1,
-.vscode-dark hr,
-.vscode-dark table > tbody > tr + tr > td {
-	border-color: rgba(255, 255, 255, 0.18);
-}
-
-.vscode-light blockquote,
-.vscode-dark blockquote {
-	background: rgba(127, 127, 127, 0.1);
-	border-color: rgba(0, 122, 204, 0.5);
-}
-
-.vscode-high-contrast blockquote {
-	background: transparent;
-	border-color: #fff;
-}
-</style>
-
-<style>
-/* Tomorrow Theme */
-/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
-/* Original theme - https://github.com/chriskempson/tomorrow-theme */
-
-/* Tomorrow Comment */
-.hljs-comment,
-.hljs-quote {
-	color: #8e908c;
-}
-
-/* Tomorrow Red */
-.hljs-variable,
-.hljs-template-variable,
-.hljs-tag,
-.hljs-name,
-.hljs-selector-id,
-.hljs-selector-class,
-.hljs-regexp,
-.hljs-deletion {
-	color: #c82829;
-}
-
-/* Tomorrow Orange */
-.hljs-number,
-.hljs-built_in,
-.hljs-builtin-name,
-.hljs-literal,
-.hljs-type,
-.hljs-params,
-.hljs-meta,
-.hljs-link {
-	color: #f5871f;
-}
-
-/* Tomorrow Yellow */
-.hljs-attribute {
-	color: #eab700;
-}
-
-/* Tomorrow Green */
-.hljs-string,
-.hljs-symbol,
-.hljs-bullet,
-.hljs-addition {
-	color: #718c00;
-}
-
-/* Tomorrow Blue */
-.hljs-title,
-.hljs-section {
-	color: #4271ae;
-}
-
-/* Tomorrow Purple */
-.hljs-keyword,
-.hljs-selector-tag {
-	color: #8959a8;
-}
-
-.hljs {
-	display: block;
-	overflow-x: auto;
-	color: #4d4d4c;
-	padding: 0.5em;
-}
-
-.hljs-emphasis {
-	font-style: italic;
-}
-
-.hljs-strong {
-	font-weight: bold;
-}
-</style>
-
-<style>
-/*
- * Markdown PDF CSS
+      <style> 
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
  */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
 
- body {
-	font-family:  "Meiryo", "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback";
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
 }
 
-pre {
-	background-color: #f8f8f8;
-	border: 1px solid #cccccc;
-	border-radius: 3px;
-	overflow-x: auto;
-	white-space: pre-wrap;
-	overflow-wrap: break-word;
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
 }
 
-pre:not(.hljs) {
-	padding: 23px;
-	line-height: 19px;
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
 }
 
-blockquote {
-	background: rgba(127, 127, 127, 0.1);
-	border-color: rgba(0, 122, 204, 0.5);
+.token.comment,
+.token.blockquote {
+  color: #969896;
 }
 
-.emoji {
-	height: 1.4em;
+.token.cdata {
+  color: #183691;
 }
 
-/* for inline code */
-:not(pre):not(.hljs) > code {
-	color: #C9AE75; /* Change the old color so it seems less like an error */
-	font-size: inherit;
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
 }
 
-/* Page Break : use <div class="page"/> to insert page break
--------------------------------------------------------- */
-.page {
-	page-break-after: always;
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
 }
 
-</style>
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
 
-</head>
-<body>
-<h2 id="gdal-visual-studio-%E9%85%8D%E7%BD%AE">GDAL + Visual Studio 配置</h2>
-<h3 id="gdal%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86">GDAL相关知识</h3>
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+ 
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview   ">
+      <h2 class="mume-header" id="gdal-visual-studio-%E9%85%8D%E7%BD%AE">GDAL + Visual Studio 配置</h2>
+
+<h3 class="mume-header" id="gdal%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86">GDAL相关知识</h3>
+
 <ol>
 <li>
 <p>Class    <code>GDALDataset</code> 	<em>A set of associated raster bands, usually from one file</em></p>
 <ul>
 <li>
 <p>Created with <code>GDALOpenShared(&quot;file_path&quot;,GA_ReadOnly)</code> for shared dataset</p>
-<pre class="hljs"><code><div>poSrcDS = (GDALDataset*)GDALOpenShared(srcPath, GA_ReadOnly);
-</div></code></pre>
-</li>
+<pre data-role="codeBlock" data-info="c++" class="language-cpp">poSrcDS <span class="token operator">=</span> <span class="token punctuation">(</span>GDALDataset<span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">GDALOpenShared</span><span class="token punctuation">(</span>srcPath<span class="token punctuation">,</span> GA_ReadOnly<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre></li>
 <li>
 <p><code>GDALClose(GDALDataset)</code> to destory the GDALDataset</p>
-<pre class="hljs"><code><div>GDALClose(poSrcDS);
-</div></code></pre>
-</li>
+<pre data-role="codeBlock" data-info="c++" class="language-cpp"><span class="token function">GDALClose</span><span class="token punctuation">(</span>poSrcDS<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre></li>
 <li>
 <p><code>GetRasterXSize() GetRasterYSize() GetRasterCount()</code>  Fetch raster width in pixels, fetch raster height  in pixels and fetch raster bands on this dataset</p>
 </li>
@@ -420,30 +249,28 @@ blockquote {
 <ul>
 <li>
 <p><code>Create (const char *pszName, int nXSize, int nYSize, int nBands, GDALDataType eType, char **papszOptions)</code> Create a new dataset with this driver</p>
-<pre class="hljs"><code><div>poDstDS = GetGDALDriverManager()-&gt;GetDriverByName(<span class="hljs-string">"GTiff"</span>)-&gt;Create(dstPath, imgXlen, imgYlen, bandNum, GDT_Byte, <span class="hljs-literal">NULL</span>); 
-</div></code></pre>
-</li>
+<pre data-role="codeBlock" data-info="c++" class="language-cpp">poDstDS <span class="token operator">=</span> <span class="token function">GetGDALDriverManager</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">GetDriverByName</span><span class="token punctuation">(</span><span class="token string">"GTiff"</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">Create</span><span class="token punctuation">(</span>dstPath<span class="token punctuation">,</span> imgXlen<span class="token punctuation">,</span> imgYlen<span class="token punctuation">,</span> bandNum<span class="token punctuation">,</span> GDT_Byte<span class="token punctuation">,</span> <span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+</pre></li>
 </ul>
 </li>
 <li>
 <p><code>CPLMalloc()</code> and <code>CPLFree()</code></p>
-<pre class="hljs"><code><div>bufftmp = (GByte*)CPLMalloc(imgXlen*imgYlen * <span class="hljs-keyword">sizeof</span>(GByte));
-CPLFree(bufftmp);
-</div></code></pre>
-</li>
+<pre data-role="codeBlock" data-info="c++" class="language-cpp">bufftmp <span class="token operator">=</span> <span class="token punctuation">(</span>GByte<span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">CPLMalloc</span><span class="token punctuation">(</span>imgXlen<span class="token operator">*</span>imgYlen <span class="token operator">*</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>GByte<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">CPLFree</span><span class="token punctuation">(</span>bufftmp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre></li>
 <li>
 <p>Class     <code>GDALRasterBand</code>   <em>A single raster band (or channel)</em></p>
 <ul>
 <li>
 <p><code>RasterIO(GDALRWFlag *eRWFlag*,int *nXOff*,int *nYOff*,int *nXSize*,int *nYSize*,void * *pData*,int *nBufXSize*,int *nBufYSize*,GDALDataType *eBufType*,GSpacing *nPixelSpace*,GSpacing *nLineSpace*,GDALRasterIOExtraArg * *psExtraArg* )</code>  Read raster band data from GDALRasterBand to pData or write raster band data from pData to GDALRasterBand</p>
-<pre class="hljs"><code><div>poSrcDS-&gt;GetRasterBand(i + <span class="hljs-number">1</span>)-&gt;RasterIO(GF_Read, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, imgXlen, imgYlen, bufftmp, imgXlen, imgYlen, GDT_Byte, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>);
-poDstDS-&gt;GetRasterBand(i + <span class="hljs-number">1</span>)-&gt;RasterIO(GF_Write, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, imgXlen, imgYlen, bufftmp, imgXlen, imgYlen, GDT_Byte, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>);
-</div></code></pre>
-</li>
+<pre data-role="codeBlock" data-info="c++" class="language-cpp">poSrcDS<span class="token operator">-</span><span class="token operator">></span><span class="token function">GetRasterBand</span><span class="token punctuation">(</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">RasterIO</span><span class="token punctuation">(</span>GF_Read<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> imgXlen<span class="token punctuation">,</span> imgYlen<span class="token punctuation">,</span> bufftmp<span class="token punctuation">,</span> imgXlen<span class="token punctuation">,</span> imgYlen<span class="token punctuation">,</span> GDT_Byte<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+poDstDS<span class="token operator">-</span><span class="token operator">></span><span class="token function">GetRasterBand</span><span class="token punctuation">(</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">RasterIO</span><span class="token punctuation">(</span>GF_Write<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> imgXlen<span class="token punctuation">,</span> imgYlen<span class="token punctuation">,</span> bufftmp<span class="token punctuation">,</span> imgXlen<span class="token punctuation">,</span> imgYlen<span class="token punctuation">,</span> GDT_Byte<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre></li>
 </ul>
 </li>
 </ol>
-<h3 id="%E4%B8%BB%E8%A6%81%E6%AD%A5%E9%AA%A4">主要步骤</h3>
+<h3 class="mume-header" id="%E4%B8%BB%E8%A6%81%E6%AD%A5%E9%AA%A4">主要步骤</h3>
+
 <ol>
 <li>
 <p>使用VS2017新建Win32控制台应用程序GDALDemo</p>
@@ -456,56 +283,55 @@ poDstDS-&gt;GetRasterBand(i + <span class="hljs-number">1</span>)-&gt;RasterIO(G
 <ul>
 <li>
 <p>GDALDemo.cpp</p>
-<pre class="hljs"><code><div><span class="hljs-comment">// GDALDemo.cpp : 定义控制台应用程序的入口点。</span>
-<span class="hljs-comment">//</span>
+<pre data-role="codeBlock" data-info="c++" class="language-cpp"><span class="token comment">// GDALDemo.cpp : 定义控制台应用程序的入口点。</span>
+<span class="token comment">//</span>
 
-<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">"stdafx.h"</span></span>
-<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">"gdal/gdal_priv.h"</span></span>
-<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;iostream&gt;</span></span>
-<span class="hljs-meta">#<span class="hljs-meta-keyword">pragma</span> comment(lib, <span class="hljs-meta-string">"gdal_i.lib"</span>)</span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">"stdafx.h"</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">"gdal/gdal_priv.h"</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
+<span class="token macro property">#<span class="token directive keyword">pragma</span> comment(lib, "gdal_i.lib")</span>
 
-<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
-<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
-</span>{
-	GDALDataset* poSrcDS;
-	GDALDataset* poDstDS;
-	<span class="hljs-keyword">int</span> imgXlen, imgYlen;
-	<span class="hljs-keyword">char</span>* srcPath = <span class="hljs-string">"Taeyeon.png"</span>;
-	<span class="hljs-keyword">char</span>* dstPath = <span class="hljs-string">"result.tif"</span>;
-	GByte* bufftmp;
-	<span class="hljs-keyword">int</span> bandNum;
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+	GDALDataset<span class="token operator">*</span> poSrcDS<span class="token punctuation">;</span>
+	GDALDataset<span class="token operator">*</span> poDstDS<span class="token punctuation">;</span>
+	<span class="token keyword">int</span> imgXlen<span class="token punctuation">,</span> imgYlen<span class="token punctuation">;</span>
+	<span class="token keyword">char</span><span class="token operator">*</span> srcPath <span class="token operator">=</span> <span class="token string">"Taeyeon.png"</span><span class="token punctuation">;</span>
+	<span class="token keyword">char</span><span class="token operator">*</span> dstPath <span class="token operator">=</span> <span class="token string">"result.tif"</span><span class="token punctuation">;</span>
+	GByte<span class="token operator">*</span> bufftmp<span class="token punctuation">;</span>
+	<span class="token keyword">int</span> bandNum<span class="token punctuation">;</span>
 
-	GDALAllRegister();
+	<span class="token function">GDALAllRegister</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-	poSrcDS = (GDALDataset*)GDALOpenShared(srcPath, GA_ReadOnly);
+	poSrcDS <span class="token operator">=</span> <span class="token punctuation">(</span>GDALDataset<span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">GDALOpenShared</span><span class="token punctuation">(</span>srcPath<span class="token punctuation">,</span> GA_ReadOnly<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-	imgXlen = poSrcDS-&gt;GetRasterXSize();
-	imgYlen = poSrcDS-&gt;GetRasterYSize();
-	bandNum = poSrcDS-&gt;GetRasterCount();
+	imgXlen <span class="token operator">=</span> poSrcDS<span class="token operator">-</span><span class="token operator">></span><span class="token function">GetRasterXSize</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	imgYlen <span class="token operator">=</span> poSrcDS<span class="token operator">-</span><span class="token operator">></span><span class="token function">GetRasterYSize</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	bandNum <span class="token operator">=</span> poSrcDS<span class="token operator">-</span><span class="token operator">></span><span class="token function">GetRasterCount</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-	<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"Image X Length:"</span> &lt;&lt; imgXlen &lt;&lt; <span class="hljs-built_in">endl</span>;
-	<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"Image Y Length:"</span> &lt;&lt; imgYlen &lt;&lt; <span class="hljs-built_in">endl</span>;
-	<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"Band Number:"</span> &lt;&lt; bandNum &lt;&lt; <span class="hljs-built_in">endl</span>;
+	cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Image X Length:"</span> <span class="token operator">&lt;&lt;</span> imgXlen <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+	cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Image Y Length:"</span> <span class="token operator">&lt;&lt;</span> imgYlen <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+	cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Band Number:"</span> <span class="token operator">&lt;&lt;</span> bandNum <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
 
-	bufftmp = (GByte*)CPLMalloc(imgXlen*imgYlen * <span class="hljs-keyword">sizeof</span>(GByte));
+	bufftmp <span class="token operator">=</span> <span class="token punctuation">(</span>GByte<span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">CPLMalloc</span><span class="token punctuation">(</span>imgXlen<span class="token operator">*</span>imgYlen <span class="token operator">*</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>GByte<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-	poDstDS = GetGDALDriverManager()-&gt;GetDriverByName(<span class="hljs-string">"GTiff"</span>)-&gt;Create(dstPath, imgXlen, imgYlen, bandNum, GDT_Byte, <span class="hljs-literal">NULL</span>);
+	poDstDS <span class="token operator">=</span> <span class="token function">GetGDALDriverManager</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">GetDriverByName</span><span class="token punctuation">(</span><span class="token string">"GTiff"</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">Create</span><span class="token punctuation">(</span>dstPath<span class="token punctuation">,</span> imgXlen<span class="token punctuation">,</span> imgYlen<span class="token punctuation">,</span> bandNum<span class="token punctuation">,</span> GDT_Byte<span class="token punctuation">,</span> <span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; bandNum; i++)
-	{
-		poSrcDS-&gt;GetRasterBand(i + <span class="hljs-number">1</span>)-&gt;RasterIO(GF_Read, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, imgXlen, imgYlen, bufftmp, imgXlen, imgYlen, GDT_Byte, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>);
-		poDstDS-&gt;GetRasterBand(i + <span class="hljs-number">1</span>)-&gt;RasterIO(GF_Write, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, imgXlen, imgYlen, bufftmp, imgXlen, imgYlen, GDT_Byte, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>);
-	}
-	CPLFree(bufftmp);
+	<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> bandNum<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+	<span class="token punctuation">{</span>
+		poSrcDS<span class="token operator">-</span><span class="token operator">></span><span class="token function">GetRasterBand</span><span class="token punctuation">(</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">RasterIO</span><span class="token punctuation">(</span>GF_Read<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> imgXlen<span class="token punctuation">,</span> imgYlen<span class="token punctuation">,</span> bufftmp<span class="token punctuation">,</span> imgXlen<span class="token punctuation">,</span> imgYlen<span class="token punctuation">,</span> GDT_Byte<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		poDstDS<span class="token operator">-</span><span class="token operator">></span><span class="token function">GetRasterBand</span><span class="token punctuation">(</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">RasterIO</span><span class="token punctuation">(</span>GF_Write<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> imgXlen<span class="token punctuation">,</span> imgYlen<span class="token punctuation">,</span> bufftmp<span class="token punctuation">,</span> imgXlen<span class="token punctuation">,</span> imgYlen<span class="token punctuation">,</span> GDT_Byte<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	<span class="token function">CPLFree</span><span class="token punctuation">(</span>bufftmp<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-	GDALClose(poSrcDS);
-	GDALClose(poDstDS);
+	<span class="token function">GDALClose</span><span class="token punctuation">(</span>poSrcDS<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">GDALClose</span><span class="token punctuation">(</span>poDstDS<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-	system(<span class="hljs-string">"pause"</span>);
-	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
-}
-</div></code></pre>
-</li>
+	<span class="token function">system</span><span class="token punctuation">(</span><span class="token string">"pause"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</pre></li>
 </ul>
 </li>
 <li>
@@ -518,11 +344,22 @@ poDstDS-&gt;GetRasterBand(i + <span class="hljs-number">1</span>)-&gt;RasterIO(G
 <p>运行exe，输出结果如下，并生成tif文件<img src="http://ww1.sinaimg.cn/large/006cY7n0ly1fvqy71yivpj30kc07a74e.jpg" alt=""></p>
 </li>
 </ol>
-<h3 id="%E9%81%87%E5%88%B0%E9%97%AE%E9%A2%98">遇到问题</h3>
+<h3 class="mume-header" id="%E9%81%87%E5%88%B0%E9%97%AE%E9%A2%98">遇到问题</h3>
+
 <ol>
 <li>首先有实例代码，所以减轻了很大难度，但是还是有很多实例代码只是涉略一点，于是花了很多时间看了一波官方的文档</li>
 <li>在项目生成的时候，一开始选择了x64，发现编译失败，有点迷。但是换了x86就OK了，应该是lib库是32bit的。</li>
 </ol>
 
-</body>
-</html>
+      </div>
+      
+      
+    </body>
+    
+    
+    
+    
+    
+    
+    
+  </html>
