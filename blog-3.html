@@ -251,10 +251,6 @@ code.language-yaml {
 	supermanSrcDS <span class="token operator">=</span> <span class="token punctuation">(</span>GDALDataset<span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">GDALOpenShared</span><span class="token punctuation">(</span>supermanPath<span class="token punctuation">,</span> GA_ReadOnly<span class="token punctuation">)</span><span class="token punctuation">;</span>
 	spaceSrcDS <span class="token operator">=</span> <span class="token punctuation">(</span>GDALDataset<span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">GDALOpenShared</span><span class="token punctuation">(</span>spacePath<span class="token punctuation">,</span> GA_ReadOnly<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-	<span class="token comment">/* 
-	***** Fucking X is height *****
-	***** Fucking Y is width  *****
-	*/</span>
 	imgXlen <span class="token operator">=</span> spaceSrcDS<span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">GetRasterXSize</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>	
 	imgYlen <span class="token operator">=</span> spaceSrcDS<span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">GetRasterYSize</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>		
 	bandNum <span class="token operator">=</span> spaceSrcDS<span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">GetRasterCount</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>

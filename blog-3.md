@@ -36,10 +36,6 @@
   	supermanSrcDS = (GDALDataset*)GDALOpenShared(supermanPath, GA_ReadOnly);
   	spaceSrcDS = (GDALDataset*)GDALOpenShared(spacePath, GA_ReadOnly);
   
-  	/* 
-  	***** Fucking X is height *****
-  	***** Fucking Y is width  *****
-  	*/
   	imgXlen = spaceSrcDS->GetRasterXSize();	
   	imgYlen = spaceSrcDS->GetRasterYSize();		
   	bandNum = spaceSrcDS->GetRasterCount();
