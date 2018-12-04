@@ -222,9 +222,9 @@ int main()
 }
 ```
 ### 实验结果 ###
-   - 图片太大，[下载地址](http://139.199.111.111//img/Big-image-fusion.tif)
+   - 图片太大，下载地址[http://donky.top/img/bed/Big-image-fusion.tif](http://donky.top/img/bed/Big-image-fusion.tif)
    - 所用时间
-    ![](http://139.199.111.111/img/compare-time.jpg)
+    ![](http://donky.top/img/bed/compare-time.jpg)
 
 ### 实验心得 ###
 - 抽象出函数的时候需要初始化一些变量，不然会导致一些连续操作如连加，会使程序结果错误

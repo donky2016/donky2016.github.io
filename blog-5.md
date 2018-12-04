@@ -137,7 +137,7 @@ void IHSImageFusionMain(char* srcMULPath, char* srcPANPath, char* resultPath)
 }
 ```
 ### 实验结果 ###
-![](http://donky.top/img/American-fusion.png)
+![](http://donky.top/img/bed/American-fusion.png)
 ### 实验心得 ###
 - 确实融合后清楚多了，真的感觉很神奇
 - 喜欢抽象，所以花了很多时间把算法抽象出来，接下来也能用到，这次实验只调用了一次核心算法函数，所以问题没有暴露出来，第六个实验再说。
