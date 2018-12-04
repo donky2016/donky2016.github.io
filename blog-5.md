@@ -81,7 +81,7 @@ void IHSImageFusionMain(char* srcMULPath, char* srcPANPath, char* resultPath)
 	int imgMULXlen = srcMULDS->GetRasterXSize();
 	int imgMULYlen = srcMULDS->GetRasterYSize();
 	int MULBandNum = srcMULDS->GetRasterCount();
-	// 创建驱动生成图像，可是发现直接生成GDT_Float32的不行，很慌
+	// 创建驱动生成图像
 	GDALDataset *resDS = GetGDALDriverManager()->GetDriverByName("GTiff")->Create(resultPath, imgMULXlen, imgMULYlen, MULBandNum, GDT_Byte, NULL);
 	
 	cout << "MUL image X len: " << imgMULXlen << endl;
@@ -91,7 +91,7 @@ void IHSImageFusionMain(char* srcMULPath, char* srcPANPath, char* resultPath)
 	int imgPANXlen = srcPANDS->GetRasterXSize();
 	int imgPANYlen = srcPANDS->GetRasterYSize();
 	int PANBandNum = srcPANDS->GetRasterCount();
-	// 用float32类型，原图像每一个像素点并不是整数
+	// 用float32类型
 	float* panBuffTmp = (float*)CPLMalloc(imgMULXlen*imgMULYlen * sizeof(float));
 	srcPANDS->GetRasterBand(PANBandNum)->RasterIO(GF_Read, 0, 0, imgMULXlen, imgMULYlen, panBuffTmp, imgMULXlen, imgMULYlen, GDT_Float32, 0, 0);
 	
@@ -119,7 +119,7 @@ void IHSImageFusionMain(char* srcMULPath, char* srcPANPath, char* resultPath)
 	// 核心算法直接计算，结果存储在resultRGB中
 	IHSImageFusion(RGB, panBuffTmp, IHS, resultRGB, imgMULXlen, imgMULYlen);
 
-	// 直接将float类型像素值放进去，这里创建的是GDT_Byte的，这里竟然可以直接放进去，迷
+	// 直接将float类型像素值放进去
 	for (int j = 0; j < 3; j++)
 	{
 		resDS->GetRasterBand(j + 1)->RasterIO(GF_Write, 0, 0, imgMULXlen, imgMULYlen, resultRGB[j], imgMULXlen, imgMULYlen, GDT_Float32, 0, 0);
@@ -136,6 +136,8 @@ void IHSImageFusionMain(char* srcMULPath, char* srcPANPath, char* resultPath)
 
 }
 ```
+### 实验结果 ###
+![](http://donky.top/img/American-fusion.png)
 ### 实验心得 ###
 - 确实融合后清楚多了，真的感觉很神奇
 - 喜欢抽象，所以花了很多时间把算法抽象出来，接下来也能用到，这次实验只调用了一次核心算法函数，所以问题没有暴露出来，第六个实验再说。
